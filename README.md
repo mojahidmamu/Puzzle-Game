@@ -1,101 +1,123 @@
-🧩 SlideQuest – Puzzle Game: 
+🧩 SlideQuest – Puzzle Game
+
 🔗 Live Demo: https://puzzle-game-gray.vercel.app/
 
-A modern, interactive sliding puzzle game built with React, Tailwind CSS, and DaisyUI.
-It combines logic, memory, and problem-solving skills into a fun and addictive experience.
-
-
+SlideQuest একটি আধুনিক ও ইন্টার‍্যাক্টিভ Sliding Puzzle Game, যা তৈরি করা হয়েছে React, Tailwind CSS এবং DaisyUI ব্যবহার করে।
+এটি logic, memory এবং problem-solving skill একসাথে improve করার জন্য একটি fun এবং addictive experience দেয়।
 
 🚀 Project Impact
 
-SlideQuest is not just a game — it is a brain training application that helps users:
+SlideQuest শুধু একটি game না — এটি একটি brain training application 🧠
 
-🧠 Improve logical thinking
-🎯 Enhance problem-solving speed
-⏱️ Build time management skills
-📱 Experience smooth mobile gameplay
-🧩 Strengthen pattern recognition
+এই অ্যাপ ব্যবহার করে ইউজাররা:
 
-This project demonstrates real-world frontend engineering skills, including state management, animations, persistence, and game logic design.
+🧠 Logical thinking উন্নত করতে পারে
+🎯 Problem-solving speed বাড়াতে পারে
+⏱️ Time management skill develop করতে পারে
+📱 Smooth mobile gameplay experience পায়
+🧩 Pattern recognition skill শক্তিশালী করে
 
+👉 এই project এর মাধ্যমে real-world frontend development skill দেখানো হয়েছে যেমন:
 
+State Management
+Animation Handling
+Local Storage ব্যবহার
+Game Logic Implementation
+🎮 Game Purpose (এই গেম কেন?)
 
-🎮 Game Role (Why this game exists)
+SlideQuest তৈরি করা হয়েছে:
 
-SlideQuest is designed to:
+🧠 Brain training করার জন্য
+😌 Relaxing কিন্তু challenging experience দেওয়ার জন্য
+🎯 Focus এবং concentration improve করার জন্য
+💻 Modern frontend game development demonstrate করার জন্য
+🕹️ How to Play (খেলার নিয়ম 🇧🇩)
 
-Train your brain through puzzle solving
-Provide a relaxing yet challenging experience
-Help users improve focus and cognitive ability
-Showcase modern frontend game development techniques
+🎯 লক্ষ্য:
+সব সংখ্যাকে সঠিক ক্রমে সাজানো (1 → শেষ পর্যন্ত)
 
+🧩 নিয়ম:
 
+শুধুমাত্র খালি জায়গার পাশে থাকা tile move করা যাবে
+diagonal move করা যাবে না ❌
 
+👆 Controls:
 
-🕹️ How to Play (Bangla 🇧🇩)
-🎯 লক্ষ্য হলো সব সংখ্যাকে সঠিক ক্রমে সাজানো (1 → শেষ পর্যন্ত)
-🧩 আপনি শুধুমাত্র খালি জায়গার সাথে লাগানো টাইল সরাতে পারবেন
-👆 ক্লিক বা মোবাইলে swipe করে টাইল সরান
-⏱️ যত কম মুভ ও কম সময়ে শেষ করবেন, তত ভালো স্কোর পাবেন
-🧠 Hint বাটন ব্যবহার করে সাহায্য নিতে পারবেন
-🎯 Daily mode এ প্রতিদিন নতুন চ্যালেঞ্জ পাবেন
-🏆 Leaderboard এ আপনার best score সেভ থাকবে
+Desktop → click
+Mobile → swipe
 
+⏱️ Scoring:
 
+কম move = ভালো score
+কম time = ভালো rank
 
+🧠 Extra:
+
+Hint button দিয়ে help নিতে পারো
+Daily Mode এ প্রতিদিন নতুন challenge
+Leaderboard এ best score save থাকে
 ✨ Features
-
 🎮 Core Gameplay
 Sliding puzzle logic
-Multiple grid sizes (3x3, 4x4, 5x5)
+Multiple grid size (3x3, 4x4, 5x5)
 Win detection system
-
 🏆 Game System
-Best score leaderboard (localStorage)
+Leaderboard (localStorage)
 Level progression system
 Daily challenge mode
-
 🧠 Smart Features
-AI Hint system (step suggestion)
-Swipe gesture support (mobile)
-Shuffle animation system
-
-🧩 Visual Modes
+AI Hint system
+Mobile swipe gesture support
+Smooth shuffle animation
+🧩 Visual Experience
 Number mode
 Image puzzle mode (real image slicing)
-Animated UI transitions
-
-💾 Persistence
-Game state saved in localStorage
-Resume game anytime
-
-
-
+Smooth UI animation & transitions
+💾 Data Persistence
+Game progress save হয়
+যেকোনো সময় resume করা যায়
 🛠️ Tech Stack
-⚛️ React.js (Frontend framework)
-🎨 Tailwind CSS (Styling)
-🌼 DaisyUI (UI components)
-🎞️ Canvas Confetti (Win animation)
-🔊 Web Audio API (Sound effects)
-💾 LocalStorage (Data persistence)
-
+⚛️ React.js → Frontend Framework
+🎨 Tailwind CSS → Styling
+🌼 DaisyUI → UI Components
+🎞️ Canvas Confetti → Win animation
+🔊 Web Audio API → Sound effects
+💾 LocalStorage → Data persistence
 🧠 Key Learning Outcomes
 
-This project demonstrates:
-State management in React
-Game logic implementation
-UI/UX design for interactive apps
-Browser APIs (Audio, Storage, Touch events)
-Algorithmic thinking (puzzle solving logic)
+এই project থেকে শেখা যায়:
 
+React State Management
+Game logic design
+UI/UX design (interactive apps)
+Browser APIs (Audio, Storage, Touch)
+Problem-solving & algorithmic thinking
+🏆 Leaderboard System (কিভাবে কাজ করে)
+প্রতিটি win-এর পর score save হয়
+Score = Moves + Time
+কম move হলে rank ভালো হয়
 
+👉 Example:
 
+Player A → 20 moves
+Player B → 15 moves
+
+👉 Winner = Player B 🥇
+
+📊 Progress System
+কতগুলো tile সঠিক জায়গায় আছে → তার উপর progress নির্ভর করে
+Percentage আকারে দেখানো হয়
+
+👉 Example:
+
+Correct tiles = 5 / 9  
+Progress = 55%
 🚀 Future Improvements
-🌍 Online multiplayer mode (Socket.io)
-🧠 Advanced AI solver (A* algorithm)
-🏅 Global leaderboard (database backend)
-📊 Analytics dashboard
-🎨 Custom image upload puzzle mode
+🌍 Online Multiplayer (Socket.io)
+🧠 Advanced AI Solver (A* Algorithm)
+🏅 Global Leaderboard (Database)
+📊 Analytics Dashboard
+🎨 Custom Image Upload Puzzle
+👨‍💻 Developer Note
 
-
-👨‍💻 Developer Note:  “How a simple idea can become a full interactive product with real-world features.”
+“একটি simple idea কিভাবে full interactive product-এ রূপ নিতে পারে — SlideQuest তার একটি বাস্তব উদাহরণ।”
