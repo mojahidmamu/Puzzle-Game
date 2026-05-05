@@ -541,7 +541,7 @@ const App = () => {
                   onKeyPress={(e) => e.key === 'Enter' && saveScore()}
                   autoFocus
                 />
-                <button onClick={saveScore} className="btn btn-light btn-lg mt-4 bg-white text-purple-600 hover:bg-gray-100">
+                <button onClick={saveScore} className="btn btn-light btn-lg mt-4 p-2 rounded-xl bg-white text-purple-600 hover:bg-gray-100">
                   Save to Leaderboard 📝
                 </button>
               </div>
@@ -587,8 +587,8 @@ const App = () => {
                     <div className="stat-value text-3xl">{formatTime(finalTime)}</div>
                   </div>
                 </div>
-                <div className="card-actions justify-center gap-3">
-                  <button onClick={() => { setShowWinModal(false); resetGame(); }} className="btn btn-light btn-lg bg-white text-green-600 hover:bg-gray-100">
+                <div className="card-actions justify-center gap-3 my-4 rounded-xl p-4">
+                  <button onClick={() => { setShowWinModal(false); resetGame(); }} className="btn btn-light btn-lg mr-2 bg-white text-green-600 hover:bg-gray-100">
                     Play Again 🎮
                   </button>
                   <button onClick={() => setShowWinModal(false)} className="btn btn-outline btn-lg border-white text-white hover:bg-white/20">
@@ -624,7 +624,7 @@ const App = () => {
                 </div>
                 <h2 className="card-title text-3xl justify-center mt-4">Time's Up! ⏰</h2>
                 <p className="text-lg">Don't worry, try again and beat the clock!</p>
-                <div className="card-actions justify-center mt-4">
+                <div className="card-actions justify-center my-4 rounded-xl p-4">
                   <button onClick={resetGame} className="btn btn-light btn-lg bg-white text-red-600 hover:bg-gray-100">
                     Try Again 🔄
                   </button>
