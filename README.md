@@ -77,13 +77,13 @@ Leaderboard এ best score save থাকে
 
 
 🛠️ Tech Stack
-    ⚛️ React.js → Frontend Framework
-    🎨 Tailwind CSS → Styling
-    🌼 DaisyUI → UI Components
-    🎞️ Canvas Confetti → Win animation
-    🔊 Web Audio API → Sound effects
-    💾 LocalStorage → Data persistence
-    🧠 Key Learning Outcomes
+    1. ⚛️ React.js → Frontend Framework
+    2. 🎨 Tailwind CSS → Styling
+    3. 🌼 DaisyUI → UI Components
+    4. 🎞️ Canvas Confetti → Win animation
+    5. 🔊 Web Audio API → Sound effects
+    6. 💾 LocalStorage → Data persistence
+    7. 🧠 Key Learning Outcomes
 
 এই project থেকে শেখা যায়:
     React State Management
