@@ -1,9 +1,9 @@
-// src/App.jsx - FINAL COMPLETE VERSION
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Confetti from 'react-confetti';
+import Logo from "../src/assets/logo.jpeg";
 
-// ========== CUSTOM SOUND SYSTEM ==========
+// Custorm Hook for Sound Effects
 const useCustomSound = () => {
   const audioContext = useRef(null);
   
@@ -48,7 +48,7 @@ const useCustomSound = () => {
   return { playMoveSound, playWinSound, playUndoSound, playClickSound, playErrorSound };
 };
 
-// ========== LEADERBOARD MANAGER ==========
+// Leaderboard Hook: Manages scores in localStorage
 const useLeaderboard = () => {
   const [leaderboard, setLeaderboard] = useState(() => {
     const saved = localStorage.getItem('puzzleLeaderboard');
@@ -72,7 +72,6 @@ const useLeaderboard = () => {
   return { leaderboard, addScore, clearLeaderboard };
 };
 
-// ========== MAIN APP COMPONENT ==========
 const App = () => {
   // Game State
   const [tiles, setTiles] = useState([]);
@@ -109,7 +108,7 @@ const App = () => {
         return { size: 4, shuffleCount: 250, timeLimit: 90, bgGradient: 'from-red-400 to-red-600', icon: '🔴', color: 'error' };
       default:
         return { size: 3, shuffleCount: 150, timeLimit: 120, bgGradient: 'from-yellow-400 to-yellow-600', icon: '🟡', color: 'warning' };
-    }
+    }      
   };
 
   const initPuzzle = useCallback(() => {
@@ -294,7 +293,7 @@ const App = () => {
       
       {/* Navbar */}
       <div className={`shadow-lg sticky top-0 z-50 ${darkMode ? 'bg-gray-900/90 backdrop-blur-md border-b border-purple-500/30' : 'bg-white/90 backdrop-blur-md border-b border-purple-200'}`}>
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div className="   px-8 py-3 flex justify-between items-center">
           <div className="flex items-center gap-3">
             <motion.div
               animate={{ rotate: gameComplete ? 360 : 0 }}
@@ -303,7 +302,7 @@ const App = () => {
             >
               🧩
             </motion.div>
-            <h1 className={`text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent`}>
+            <h1 className={`text-2xl md:text-3xl font-bold underline bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent`}>
               Puzzle Master
             </h1>
           </div>
@@ -311,17 +310,17 @@ const App = () => {
           <div className="flex gap-3">
             <div className={`stat px-4 py-2 rounded-xl ${time <= 30 ? 'bg-red-500/20 border border-red-500' : darkMode ? 'bg-purple-900/50' : 'bg-purple-100'}`}>
               <div className="stat-value text-sm flex items-center gap-2">
-                <span>⏰</span> {formatTime(time)}
+                <span className='font-semibold hover:text-white'>Time  {formatTime(time)}</span>
               </div>
             </div>
             
-            <button onClick={() => setDarkMode(!darkMode)} className={`btn btn-circle ${darkMode ? 'bg-yellow-500/20 text-yellow-500' : 'bg-gray-800 text-white'}`}>
+            <button onClick={() => setDarkMode(!darkMode)} className={`btn btn-circle p-2 rounded-lg ${darkMode ? 'bg-yellow-500/20 text-yellow-500' : 'bg-gray-800 text-white'}`}>
               {darkMode ? <span className="text-xl">☀️</span> : <span className="text-xl">🌙</span>}
             </button>
-            <button onClick={() => setSoundEnabled(!soundEnabled)} className={`btn btn-circle ${darkMode ? 'bg-purple-900/50' : 'bg-purple-100'}`}>
+            <button onClick={() => setSoundEnabled(!soundEnabled)} className={`btn btn-circle p-2 rounded-lg ${darkMode ? 'bg-purple-900/50' : 'bg-purple-100'}`}>
               {soundEnabled ? <span className="text-xl">🔊</span> : <span className="text-xl">🔇</span>}
             </button>
-            <button onClick={() => setShowLeaderboard(!showLeaderboard)} className={`btn btn-circle ${darkMode ? 'bg-purple-900/50' : 'bg-purple-100'}`}>
+            <button onClick={() => setShowLeaderboard(!showLeaderboard)} className={`btn btn-circle p-2 rounded-lg ${darkMode ? 'bg-purple-900/50' : 'bg-purple-100'}`}>
               <span className="text-xl">🏆</span>
             </button>
             <button onClick={() => setShowMenu(!showMenu)} className="btn btn-circle lg:hidden">
@@ -331,7 +330,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* Progress Bar - Beautiful Gradient */}
+      {/* Progress Bar  */}
       <div className="container mx-auto px-4 mt-6">
         <div className="relative">
           <div className="w-full bg-gray-700/30 rounded-full h-3 overflow-hidden shadow-inner">
@@ -346,7 +345,7 @@ const App = () => {
             <span className={progress >= 25 ? 'text-green-500' : 'text-gray-400'}>🎯 25%</span>
             <span className={progress >= 50 ? 'text-yellow-500' : 'text-gray-400'}>⭐ 50%</span>
             <span className={progress >= 75 ? 'text-orange-500' : 'text-gray-400'}>🔥 75%</span>
-            <span className={progress >= 100 ? 'text-purple-500' : 'text-gray-400'}>🏆 100%</span>
+            <span className={progress >= 100 ? 'text-purple-500' : 'text-gray-400'}>🏆 100% <br /><span className='font-bold mx-2 mx-auto'>Winner</span></span>
           </div>
         </div>
         <p className="text-xs text-center mt-1 opacity-70">Progress: {Math.round(progress)}% Complete</p>
