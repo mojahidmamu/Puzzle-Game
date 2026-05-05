@@ -341,14 +341,14 @@ const App = () => {
               transition={{ duration: 0.3 }}
             />
           </div>
-          <div className="flex justify-between mt-2 text-sm font-medium">
+          <div className="flex justify-between mt-1 text-sm font-medium">
             <span className={progress >= 25 ? 'text-green-500' : 'text-gray-400'}>🎯 25%</span>
             <span className={progress >= 50 ? 'text-yellow-500' : 'text-gray-400'}>⭐ 50%</span>
             <span className={progress >= 75 ? 'text-orange-500' : 'text-gray-400'}>🔥 75%</span>
             <span className={progress >= 100 ? 'text-purple-500' : 'text-gray-400'}>🏆 100% <br /><span className='font-bold mx-2 mx-auto'>Winner</span></span>
           </div>
         </div>
-        <p className="text-xs text-center mt-1 opacity-70">Progress: {Math.round(progress)}% Complete</p>
+        <p className="text-xs text-center opacity-70 font-bold text-black-400 hover:text-white">Progress: {Math.round(progress)}% Complete</p>
       </div>
 
       {/* Main Game Area */}
@@ -430,13 +430,13 @@ const App = () => {
             {/* Controls Card Desktop */}
             <div className={`card shadow-xl rounded-2xl p-2  ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'} hidden lg:block`}>
               <div className="card-body">
-                <h2 className="card-title font-bold text-2xl mx-10 mx-auto hover:text-white"><span>🎛️</span> Controls</h2>
-                <div className="space-y-3">
+                <h2 className="card-title font-bold text-2xl mx-10  hover:text-white"><span>🎛️</span> Controls</h2>
+                <div className="space-y-3 mt-4">
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={undoLastMove} 
-                    className="btn btn-secondary w-full gap-2 text-lg" 
+                    className="btn btn-secondary border rounded-lg  w-full gap-2 text-lg hover:text-purple-500 " 
                     disabled={history.length === 0 || gameComplete || timeUp}
                   >
                     <span>↩️</span> Undo Last Move
@@ -445,7 +445,7 @@ const App = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={resetGame} 
-                    className="btn btn-primary w-full gap-2 text-lg"
+                    className="btn btn-primary w-full gap-2 text-lg  border rounded-lg hover:text-purple-500"
                   >
                     <span>🔄</span> New Game
                   </motion.button>
@@ -522,9 +522,9 @@ const App = () => {
               initial={{ scale: 0.5, y: 50 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.5, y: 50 }}
-              className="card w-full max-w-md bg-gradient-to-br from-purple-600 to-pink-600 shadow-2xl"
+              className="card w-full  max-w-md bg-gradient-to-br from-purple-600 to-pink-600 shadow-2xl"
             >
-              <div className="card-body text-center">
+              <div className="card-body p-2 text-center">
                 <div className="flex justify-center">
                   <div className="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center animate-bounce">
                     <span className="text-6xl">🏆</span>
@@ -649,12 +649,12 @@ const App = () => {
               initial={{ scale: 0.5, y: 50 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.5, y: 50 }}
-              className="card w-full max-w-2xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-2xl"
+              className="card w-full rounded-3xl max-w-2xl bg-gradient-to-br from-purple-600 to-pink-600 shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="card-body">
+              <div className="card-body p-4">
                 <div className="flex justify-between items-center">
-                  <h2 className="card-title text-3xl text-white">
+                  <h2 className="card-title text-3xl  mb-3 text-white">
                     <span>🏆</span> Leaderboard
                   </h2>
                   <button onClick={() => setShowLeaderboard(false)} className="btn btn-circle btn-ghost text-white">✕</button>
@@ -669,7 +669,7 @@ const App = () => {
                   <div className="overflow-x-auto">
                     <table className="table w-full">
                       <thead>
-                        <tr className="text-white border-white/30">
+                        <tr className="text-white underline border-white/30">
                           <th className="text-lg">#</th>
                           <th className="text-lg">Player</th>
                           <th className="text-lg">Moves</th>
@@ -685,7 +685,7 @@ const App = () => {
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: idx * 0.05 }}
-                            className="text-white border-white/20 hover:bg-white/10"
+                            className="text-white text-center border-white/20 hover:bg-white/10"
                           >
                             <td className="font-bold text-xl">
                               {idx === 0 && '🥇'}
@@ -710,8 +710,8 @@ const App = () => {
                 )}
                 
                 {leaderboard.length > 0 && (
-                  <div className="card-actions justify-end mt-4">
-                    <button onClick={clearLeaderboard} className="btn btn-error btn-outline text-white border-white hover:bg-red-600">
+                  <div className="card-actions justify-end mt-4 p-2">
+                    <button onClick={clearLeaderboard} className="btn btn-error btn-outline rounded-xl p-2 border text-white border-white hover:bg-red-600">
                       Clear Leaderboard 🗑️
                     </button>
                   </div>
