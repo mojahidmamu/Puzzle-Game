@@ -359,13 +359,13 @@ const App = () => {
             {/* Stats Card */}
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className={`card shadow-xl ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'}`}
+              className={`card shadow-xl rounded-2xl ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'}`}
             >
-              <div className="card-body">
-                <h2 className="card-title text-2xl"><span>📊</span> Game Stats</h2>
+              <div className="card-body p-2 ">
+                <h2 className="card-title font-bold text-2xl mx-4 hover:text-purple-500"><span>📊</span> Game Stats</h2>
                 <div className="stats shadow w-full bg-transparent">
                   <div className="stat text-center">
-                    <div className="stat-title text-lg">Moves</div>
+                    <div className="stat-title text-lg hover:text-white">Moves</div>
                     <motion.div 
                       key={moves}
                       initial={{ scale: 1.5 }}
@@ -376,7 +376,7 @@ const App = () => {
                     </motion.div>
                   </div>
                   <div className="stat text-center">
-                    <div className="stat-title text-lg">Time Left</div>
+                    <div className="stat-title text-lg hover:text-white">Time Left</div>
                     <div className={`stat-value text-2xl ${time <= 30 ? 'text-red-500' : 'text-yellow-500'}`}>
                       {formatTime(time)}
                     </div>
@@ -388,16 +388,16 @@ const App = () => {
             {/* Difficulty Card */}
             <motion.div 
               whileHover={{ scale: 1.02 }}
-              className={`card shadow-xl ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'}`}
+              className={`card shadow-xl rounded-2xl py-2  ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'}`}
             >
-              <div className="card-body">
-                <h2 className="card-title text-2xl"><span>🎮</span> Difficulty</h2>
-                <div className="grid grid-cols-3 gap-3">
+              <div className="card-body p-2">
+                <h2 className="card-title font-bold text-2xl mx-8 mb-2 hover:text-purple-500"><span>🎮</span> Difficulty</h2>
+                <div className="grid grid-cols-3 gap-2 ">
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => changeDifficulty('easy')}
-                    className={`btn btn-lg flex flex-col gap-1 ${difficulty === 'easy' ? 'btn-success shadow-lg' : 'btn-ghost'}`}
+                    className={`btn btn-lg flex flex-col gap-1  border rounded-lg hover:text-white py-2 ${difficulty === 'easy' ? 'btn-success shadow-lg' : 'btn-ghost'}`}
                   >
                     <span className="text-2xl">🟢</span>
                     <span>Easy</span>
@@ -407,7 +407,7 @@ const App = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => changeDifficulty('medium')}
-                    className={`btn btn-lg flex flex-col gap-1 ${difficulty === 'medium' ? 'btn-warning shadow-lg' : 'btn-ghost'}`}
+                    className={`btn btn-lg flex flex-col gap-1 border rounded-lg hover:text-white py-2 ${difficulty === 'medium' ? 'btn-warning shadow-lg' : 'btn-ghost'}`}
                   >
                     <span className="text-2xl">🟡</span>
                     <span>Medium</span>
@@ -417,7 +417,7 @@ const App = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => changeDifficulty('hard')}
-                    className={`btn btn-lg flex flex-col gap-1 ${difficulty === 'hard' ? 'btn-error shadow-lg' : 'btn-ghost'}`}
+                    className={`btn btn-lg flex flex-col gap-1 border rounded-lg hover:text-white py-2 ${difficulty === 'hard' ? 'btn-error shadow-lg' : 'btn-ghost'}`}
                   >
                     <span className="text-2xl">🔴</span>
                     <span>Hard</span>
@@ -428,9 +428,9 @@ const App = () => {
             </motion.div>
 
             {/* Controls Card Desktop */}
-            <div className={`card shadow-xl ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'} hidden lg:block`}>
+            <div className={`card shadow-xl rounded-2xl p-2  ${darkMode ? 'bg-gray-900/80 backdrop-blur-sm border border-purple-500/30' : 'bg-white/80 backdrop-blur-sm border border-purple-200'} hidden lg:block`}>
               <div className="card-body">
-                <h2 className="card-title text-2xl"><span>🎛️</span> Controls</h2>
+                <h2 className="card-title font-bold text-2xl mx-10 mx-auto hover:text-white"><span>🎛️</span> Controls</h2>
                 <div className="space-y-3">
                   <motion.button 
                     whileHover={{ scale: 1.05 }}
